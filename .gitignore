@@ -1,15 +1,19 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+# Datos sensibles
+.env
+*.db
+*.sqlite
+*.sqlite3
+
+# Archivos temporales
+tmp/
+log/
 .DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
+
+# Backups/exports
+*.bak
+*.dump
+*.log
+
+# IDE
+.idea/
+.vscode/
