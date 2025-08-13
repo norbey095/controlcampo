@@ -31,6 +31,13 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.10"
+    }
 
     kotlinOptions {
         jvmTarget = "11"
@@ -46,5 +53,20 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    // Jetpack Compose Core
+    implementation("androidx.activity:activity-compose:1.8.2")
+    implementation("androidx.compose.ui:ui:1.5.0")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.5.0")
+    implementation("androidx.compose.material3:material3:1.1.2")
+
+// ViewModel + State
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.1")
+
+// Navigation Compose
+    implementation("androidx.navigation:navigation-compose:2.7.3")
+
+// Optional: Para debugging de interfaces
+    debugImplementation("androidx.compose.ui:ui-tooling:1.5.0")
 }
 
