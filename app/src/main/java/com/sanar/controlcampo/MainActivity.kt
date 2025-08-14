@@ -6,6 +6,8 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.sanar.controlcampo.ui.FormPage2Activity
+import com.sanar.controlcampo.ui.FormViewModel
 import org.json.JSONObject
 import java.io.OutputStreamWriter
 import java.net.HttpURLConnection
@@ -61,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                         if (json.getBoolean("success")) {
                             Toast.makeText(this, "Bienvenido ${json.getString("usuario")}", Toast.LENGTH_SHORT).show()
 
-                            val intent = Intent(this, WelcomeActivity::class.java)
+                            val intent = Intent(this, FormPage2Activity::class.java)
                             startActivity(intent)
                             finish()
                         } else {
