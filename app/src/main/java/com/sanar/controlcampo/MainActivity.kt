@@ -6,8 +6,6 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.sanar.controlcampo.ui.FormPage2Activity
-import com.sanar.controlcampo.ui.FormViewModel
 import org.json.JSONObject
 import java.io.OutputStreamWriter
 import java.net.HttpURLConnection
@@ -42,6 +40,10 @@ class MainActivity : AppCompatActivity() {
     private fun hacerLogin(usuario: String, password: String) {
         Thread {
             try {
+                val intent = Intent(this, FormInitActivity::class.java)
+                startActivity(intent)
+                finish()
+
                 val url = URL("http://192.168.1.8/controlcampo/login.php")
                 val conn = url.openConnection() as HttpURLConnection
                 conn.requestMethod = "POST"
@@ -63,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                         if (json.getBoolean("success")) {
                             Toast.makeText(this, "Bienvenido ${json.getString("usuario")}", Toast.LENGTH_SHORT).show()
 
-                            val intent = Intent(this, FormPage2Activity::class.java)
+                            val intent = Intent(this, WelcomeActivity::class.java)
                             startActivity(intent)
                             finish()
                         } else {
@@ -75,6 +77,8 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 conn.disconnect()
+
+
             } catch (e: Exception) {
                 runOnUiThread {
                     Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_LONG).show()

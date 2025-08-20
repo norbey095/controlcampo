@@ -16,6 +16,8 @@ import android.widget.AutoCompleteTextView
 import android.view.MotionEvent
 import android.widget.ImageButton
 import android.content.Intent
+import kotlin.jvm.java
+import kotlin.let
 
 class FormInitActivity : AppCompatActivity() {
     @SuppressLint("ClickableViewAccessibility", "MissingInflatedId")
@@ -79,12 +81,45 @@ class FormInitActivity : AppCompatActivity() {
         }
 
         // Opciones para los desplegables
-        val opcionesMunicipio = listOf("Barbosa", "Bello", "Caldas", "Copacabana", "Envigado", "Girardota", "Itagui", "La Estrella", "Medellín", "Sabaneta", "Rionegro")
+        val opcionesMunicipio = listOf(
+            "Barbosa",
+            "Bello",
+            "Caldas",
+            "Copacabana",
+            "Envigado",
+            "Girardota",
+            "Itagui",
+            "La Estrella",
+            "Medellín",
+            "Sabaneta",
+            "Rionegro"
+        )
         val opcionesAplicativo = listOf("HIDRO", "MAXIMO")
-        val opcionesServicio = listOf("Aguas Combinadas Recolección", "Aguas Lluvias Recolección", "Aguas Residuales Recolección")
-        val opcionesElemento = listOf("Aliviadero", "Cámara de Inspección", "Sumidero", "Tubería", "Acometida")
+        val opcionesServicio = listOf(
+            "Aguas Combinadas Recolección",
+            "Aguas Lluvias Recolección",
+            "Aguas Residuales Recolección"
+        )
+        val opcionesElemento =
+            listOf("Aliviadero", "Cámara de Inspección", "Sumidero", "Tubería", "Acometida")
         val opcionesEfectividad = listOf("EFECTIVA", "NO EFECTIVA")
-        val opcionesNoEfectividad = listOf("No aplica", "Atendido con otra solicitud", "Acometida en mal estado", "Corresponde a otro servicio", "Corresponde atender a otra entidad", "Deterioro carpeta asfáltica", "Garantía", "Información errada", "No autorizan trabajos (cliente)", "No se contacta cliente", "No se encontró daño", "Problema interno (Daño interno)", "Problemas de orden público", "Se encontró atendida", "Solicitud mal generada")
+        val opcionesNoEfectividad = listOf(
+            "No aplica",
+            "Atendido con otra solicitud",
+            "Acometida en mal estado",
+            "Corresponde a otro servicio",
+            "Corresponde atender a otra entidad",
+            "Deterioro carpeta asfáltica",
+            "Garantía",
+            "Información errada",
+            "No autorizan trabajos (cliente)",
+            "No se contacta cliente",
+            "No se encontró daño",
+            "Problema interno (Daño interno)",
+            "Problemas de orden público",
+            "Se encontró atendida",
+            "Solicitud mal generada"
+        )
 
         // Referencias a los AutoCompleteTextView
         val autoMunicipio = findViewById<AutoCompleteTextView>(R.id.AutoMunicipio)
