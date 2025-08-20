@@ -7,7 +7,7 @@
         android:id="@+id/bgImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/fondo_login"
+        android:src="@drawable/sanear"
         android:scaleType="centerCrop"
         android:contentDescription="@string/bg_image_desc"
         android:alpha="0.9" />
