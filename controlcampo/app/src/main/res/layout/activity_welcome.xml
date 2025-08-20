@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/bgImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/fondo_login"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/bg_image_desc"
+        android:alpha="0.9" />
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="top|center_horizontal"
+        android:padding="32dp">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="164dp"
+            android:layout_height="164dp"
+            android:src="@drawable/logo_sanear"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="40dp"
+            android:contentDescription="@string/logo_desc" />
+    </LinearLayout>
+</RelativeLayout>
