@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormInitActivity"
+    android:background="@drawable/fondo_login">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/informacion_preliminar"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <!-- Acta -->
+    <EditText
+        android:id="@+id/editTxtActa"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
+        android:hint="@string/acta_n"
+        android:inputType="text"
+        android:textColor="#000000"
+        style="@style/EditTextRedondeado"
+        android:textSize="16sp"
+        android:layout_margin="10dp"
+        android:background="@drawable/edittext_background"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/editTxtSolicitud"
+        app:layout_constraintWidth_percent="0.41" />
+
+    <!-- Solicitud -->
+    <EditText
+        android:id="@+id/editTxtSolicitud"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="@string/solicitud"
+        android:inputType="text"
+        android:textColor="#000000"
+        style="@style/EditTextRedondeado"
+        android:textSize="16sp"
+        android:layout_margin="10dp"
+        android:background="@drawable/edittext_background"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintStart_toEndOf="@id/editTxtActa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.41" />
+
+    <!-- Fecha Inicio -->
+    <EditText
+        android:id="@+id/editFechaInicio"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="@string/fecha_inicio"
+        android:focusable="false"
+        android:clickable="true"
+        android:textColor="#000000"
+        style="@style/EditTextRedondeado"
+        android:textSize="16sp"
+        android:drawableEnd="@drawable/ic_calendar"
+        android:paddingStart="5dp"
+        android:paddingEnd="12dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/edittext_background"
+        app:layout_constraintTop_toBottomOf="@id/editTxtActa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/editFechaFin"
+        app:layout_constraintWidth_percent="0.41"
+        tools:ignore="TextFields" />
+
+    <!-- Fecha Fin -->
+    <EditText
+        android:id="@+id/editFechaFin"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="@string/fecha_fin"
+        android:focusable="false"
+        android:clickable="true"
+        android:textColor="#000000"
+        style="@style/EditTextRedondeado"
+        android:textSize="16sp"
+        android:drawableEnd="@drawable/ic_calendar"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/edittext_background"
+        app:layout_constraintTop_toBottomOf="@id/editTxtSolicitud"
+        app:layout_constraintStart_toEndOf="@id/editFechaInicio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.41"
+        tools:ignore="TextFields" />
+
+    <!-- Dirección -->
+    <EditText
+        android:id="@+id/editTxtDireccion"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="@string/direcci_n"
+        android:inputType="textPostalAddress"
+        android:textColor="#000000"
+        style="@style/EditTextRedondeado"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="21dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_background"
+        app:layout_constraintTop_toBottomOf="@id/editFechaInicio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Municipio -->
+    <AutoCompleteTextView
+        android:id="@+id/AutoMunicipio"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="@string/municipio"
+        android:inputType="none"
+        android:focusable="true"
+        android:clickable="true"
+        android:drawableEnd="@drawable/ic_arrow_drop_down"
+        android:layout_marginHorizontal="21dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/dropdown_item_background"
+        app:layout_constraintTop_toBottomOf="@id/editTxtDireccion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/AutoCompleteTextStyle" />
+
+    <!-- Aplicativo -->
+    <AutoCompleteTextView
+        android:id="@+id/AutoAplicativo"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="@string/aplicativo"
+        android:inputType="none"
+        android:focusable="true"
+        android:clickable="true"
+        android:drawableEnd="@drawable/ic_arrow_drop_down"
+        android:layout_marginHorizontal="21dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/dropdown_item_background"
+        app:layout_constraintTop_toBottomOf="@id/AutoMunicipio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/AutoCompleteTextStyle" />
+
+    <!-- Servicio -->
+    <AutoCompleteTextView
+        android:id="@+id/AutoServicio"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="@string/servicio"
+        android:inputType="none"
+        android:focusable="true"
+        android:clickable="true"
+        android:drawableEnd="@drawable/ic_arrow_drop_down"
+        android:layout_marginHorizontal="21dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/dropdown_item_background"
+        app:layout_constraintTop_toBottomOf="@id/AutoAplicativo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/AutoCompleteTextStyle" />
+
+    <!-- Elemento -->
+    <AutoCompleteTextView
+        android:id="@+id/AutoElemento"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="@string/elemento_intervenido"
+        android:inputType="none"
+        android:focusable="true"
+        android:clickable="true"
+        android:drawableEnd="@drawable/ic_arrow_drop_down"
+        android:layout_marginHorizontal="21dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/dropdown_item_background"
+        app:layout_constraintTop_toBottomOf="@id/AutoServicio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/AutoCompleteTextStyle"/>
+
+    <!-- IPID -->
+    <EditText
+        android:id="@+id/editTxtIPID"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="@string/ipid"
+        android:inputType="none"
+        android:textColor="#000000"
+        style="@style/EditTextRedondeado"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="21dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_background"
+        app:layout_constraintTop_toBottomOf="@id/AutoElemento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Efectividad -->
+    <AutoCompleteTextView
+        android:id="@+id/AutoEfectividad"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="@string/efectividad"
+        android:inputType="none"
+        android:focusable="true"
+        android:clickable="true"
+        android:drawableEnd="@drawable/ic_arrow_drop_down"
+        android:layout_marginHorizontal="21dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/dropdown_item_background"
+        app:layout_constraintTop_toBottomOf="@id/editTxtIPID"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/AutoCompleteTextStyle"/>
+
+    <!-- Causa no Efectividad -->
+    <AutoCompleteTextView
+        android:id="@+id/AutoCausaNoEfectividad"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="@string/causa_no_efectividad"
+        android:inputType="none"
+        android:focusable="true"
+        android:clickable="true"
+        android:drawableEnd="@drawable/ic_arrow_drop_down"
+        android:layout_marginHorizontal="21dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/dropdown_item_background"
+        app:layout_constraintTop_toBottomOf="@id/AutoEfectividad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/AutoCompleteTextStyle"/>
+
+    <!-- Icono siguiente -->
+    <ImageButton
+        android:id="@+id/btnContinuar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="16dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/flecha_continuar"
+        android:scaleType="fitCenter"
+        android:src="@drawable/flecha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
