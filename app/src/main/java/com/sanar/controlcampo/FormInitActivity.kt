@@ -16,6 +16,7 @@ import android.widget.AutoCompleteTextView
 import android.view.MotionEvent
 import android.widget.ImageButton
 import android.content.Intent
+import com.sanar.controlcampo.ui.FormPage2Activity
 import kotlin.jvm.java
 import kotlin.let
 
@@ -181,7 +182,7 @@ class FormInitActivity : AppCompatActivity() {
         val btnContinuar = findViewById<ImageButton>(R.id.btnContinuar)
 
         btnContinuar.setOnClickListener {
-            val intent = Intent(this, WelcomeActivity::class.java)
+            val intent = Intent(this, FormPage2Activity::class.java)
             startActivity(intent)
         }
     }

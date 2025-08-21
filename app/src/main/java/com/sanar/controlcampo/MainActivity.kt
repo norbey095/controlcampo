@@ -3,9 +3,11 @@ package com.sanar.controlcampo
 import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.sanar.controlcampo.ui.FormPage2Activity
 import org.json.JSONObject
 import java.io.OutputStreamWriter
 import java.net.HttpURLConnection
@@ -23,9 +25,9 @@ class MainActivity : AppCompatActivity() {
 
         editUsuario = findViewById(R.id.editUsuario)
         editPassword = findViewById(R.id.editPassword)
-        flechaLogin = findViewById(R.id.flechaLogin)
+        val btnContinuar = findViewById<ImageButton>(R.id.btnContinuar)
 
-        flechaLogin.setOnClickListener {
+        btnContinuar.setOnClickListener {
             val usuario = editUsuario.text.toString()
             val password = editPassword.text.toString()
 
@@ -40,10 +42,6 @@ class MainActivity : AppCompatActivity() {
     private fun hacerLogin(usuario: String, password: String) {
         Thread {
             try {
-                val intent = Intent(this, FormInitActivity::class.java)
-                startActivity(intent)
-                finish()
-
                 val url = URL("http://192.168.1.8/controlcampo/login.php")
                 val conn = url.openConnection() as HttpURLConnection
                 conn.requestMethod = "POST"
@@ -65,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                         if (json.getBoolean("success")) {
                             Toast.makeText(this, "Bienvenido ${json.getString("usuario")}", Toast.LENGTH_SHORT).show()
 
-                            val intent = Intent(this, WelcomeActivity::class.java)
+                            val intent = Intent(this, FormInitActivity::class.java)
                             startActivity(intent)
                             finish()
                         } else {
