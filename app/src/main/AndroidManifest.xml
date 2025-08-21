@@ -33,6 +33,8 @@
         </activity>
         <activity android:name=".WelcomeActivity" />
         <activity android:name=".ui.FormPage2Activity" />
+        <activity android:name=".DashboardActivity" />
+
     </application>
 
 </manifest>

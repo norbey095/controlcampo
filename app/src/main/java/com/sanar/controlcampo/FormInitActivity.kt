@@ -182,7 +182,7 @@ class FormInitActivity : AppCompatActivity() {
         val btnContinuar = findViewById<ImageButton>(R.id.btnContinuar)
 
         btnContinuar.setOnClickListener {
-            val intent = Intent(this, FormPage2Activity::class.java)
+            val intent = Intent(this, DashboardActivity::class.java)
             startActivity(intent)
         }
     }
