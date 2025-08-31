@@ -17,4 +17,14 @@
     <string name="acta_n">Acta N°</string>
     <string name="informacion_preliminar">INFORMACION PRELIMINAR</string>
     <string name="flecha_continuar">Flecha continuar</string>
+    <string name="usuario">Usuario</string>
+    <string name="logo_samear">logo_samear</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="todo">TODO</string>
+    <string name="informaci_n_t_cnica_de_la_solicitud">INFORMACIÓN TÉCNICA DE LA SOLICITUD</string>
+    <string name="guardar">Guardar</string>
+    <string name="trabajo">Trabajo</string>
+    <string name="motivo">Motivo</string>
+    <string name="causa">Causa</string>
+    <string name="informacion_tecnica_de_la_solicitud">INFORMACION TECNICA DE LA SOLICITUD</string>
 </resources>

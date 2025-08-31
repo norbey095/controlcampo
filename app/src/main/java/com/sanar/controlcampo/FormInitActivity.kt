@@ -2,7 +2,11 @@ package com.sanar.controlcampo
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.MotionEvent
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,15 +14,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.datepicker.MaterialDatePicker
 import java.text.SimpleDateFormat
-import java.util.*
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
-import android.view.MotionEvent
-import android.widget.ImageButton
-import android.content.Intent
-import com.sanar.controlcampo.ui.FormPage2Activity
-import kotlin.jvm.java
-import kotlin.let
+import java.util.Date
+import java.util.Locale
 
 class FormInitActivity : AppCompatActivity() {
     @SuppressLint("ClickableViewAccessibility", "MissingInflatedId")
@@ -182,8 +179,32 @@ class FormInitActivity : AppCompatActivity() {
         val btnContinuar = findViewById<ImageButton>(R.id.btnContinuar)
 
         btnContinuar.setOnClickListener {
-            val intent = Intent(this, DashboardActivity::class.java)
-            startActivity(intent)
+            // Validamos que todos los campos tengan valor
+            val camposObligatorios = listOf(
+                editFechaInicio,
+                editFechaFin,
+                autoMunicipio,
+                autoAplicativo,
+                autoServicio,
+                autoElemento,
+                autoEfectividad
+            )
+
+            var valido = true
+            for (campo in camposObligatorios) {
+                if (campo.text.toString().trim().isEmpty()) {
+                    campo.error = "Requerido"
+                    valido = false
+                }
+            }
+
+            // Validación extra: si es NO EFECTIVA, debe tener causa
+            if (autoEfectividad.text.toString() == "NO EFECTIVA" &&
+                autoCausaNoEfectividad.text.toString().trim().isEmpty()
+            ) {
+                autoCausaNoEfectividad.error = "Seleccione una causa"
+                valido = false
+            }
         }
     }
 }
